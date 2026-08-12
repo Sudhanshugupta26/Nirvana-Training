@@ -74,15 +74,12 @@ public class Observer{
         OrderService order =
                 new OrderService();
 
-        order.addOb(
-                new EmailOb());
+        order.addOb(new EmailOb());
 
-        order.addOb(
-                new SmsOb());
+        order.addOb(new SmsOb());
 
-        order.addOb(
-                new InventoryOb());
-
+        order.addOb(new InventoryOb());
+        
         order.placeOrder();
     }
 }

@@ -40,6 +40,7 @@ class Circle extends Shape{
 }
 
 public class Prototype {
+    
     public static void main(String[] args){
 
         Circle original = new Circle(10,"Red");
