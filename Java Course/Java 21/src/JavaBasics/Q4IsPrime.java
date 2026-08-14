@@ -2,7 +2,7 @@ package JavaBasics;
 
 import java.util.Scanner;
 
-public class Q4 {
+public class Q4IsPrime {
     static boolean isPrime(int n){
         if(n<2){
             return false;

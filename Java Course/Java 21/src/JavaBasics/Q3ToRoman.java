@@ -2,7 +2,8 @@ package JavaBasics;
 
 import java.util.Scanner;
 
-public class Q3 {
+public class Q3ToRoman {
+
     public static String intToRoman(int num) {
 
         int[] values = {
