@@ -7,27 +7,22 @@ public class Stream {
 
     public static void main(String[] args) {
 
-        // Create list from 1 to 1,000,000
+        // Normal Stream takes less time than Parallel Stream for small data sets and more if large computation happening for each traverse.
+
         List<Integer> numbers = IntStream.rangeClosed(1, 1_000_000)
                                          .boxed()
                                          .collect(Collectors.toList());
         long startTime;
         long endTime;
-        // =========================
-        // Sequential Stream
-        // =========================
-
-
 
         startTime = System.currentTimeMillis();
 
         numbers.stream()
-               .forEach(n -> {});
+               .forEach(n -> { n = n*n ;});
 
         endTime = System.currentTimeMillis();
 
-        System.out.println("Stream Time: "
-                + (endTime - startTime) + " ms");
+        System.out.println("Stream Time: "+ (endTime - startTime) + " ms");
 
     }
 }
