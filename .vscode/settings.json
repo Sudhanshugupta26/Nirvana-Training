@@ -1,0 +1,9 @@
+{
+  "java.project.sourcePaths": [
+    "Java Course/Java 21/src"
+  ],
+  "java.project.outputPath": "Java Course/Java 21/bin",
+  "java.project.referencedLibraries": [
+    "Java Course/Java 21/lib/**/*.jar"
+  ]
+}

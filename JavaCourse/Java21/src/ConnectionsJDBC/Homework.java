@@ -12,8 +12,7 @@ public class Homework {
     private static final Logger LOGGER = Logger.getLogger(Homework.class.getName());
 
     public static void main(String[] args) throws SQLException {
-        String url =
-            "jdbc:postgresql://localhost:5432/Java";
+        String url = "jdbc:postgresql://localhost:5432/Java";
 
         String username = "postgres";
         String password = "sudhanshu@26022004";

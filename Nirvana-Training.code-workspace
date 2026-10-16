@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "Java 21",
+      "path": "Java Course/Java 21"
+    }
+  ],
+  "settings": {
+    "java.project.sourcePaths": [
+      "src"
+    ],
+    "java.project.outputPath": "bin",
+    "java.project.referencedLibraries": [
+      "lib/**/*.jar"
+    ]
+  }
+}

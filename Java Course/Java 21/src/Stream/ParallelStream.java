@@ -1,36 +1,33 @@
-package Stream;
+package JavaCourse;
 
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.logging.Logger;
 import java.util.stream.IntStream;
 
 public class ParallelStream {
-     public static void main(String[] args) {
+    private static final Logger LOGGER = Logger.getLogger(ParallelStream.class.getName());
 
-       // Parallel Stream takes less time than Normal Stream for large data sets and more if small computation happening for each traverse.
-       List<Integer> numbers = IntStream.rangeClosed(1, 100000)
-                                         .boxed()
-                                         .collect(Collectors.toList());
-       long startTime;
-       long endTime;
+    public static void main(String[] args) {
+        // Parallel streams are faster for large data sets with heavier per-element work.
+        List<Integer> numbers = IntStream.rangeClosed(1, 100_000)
+                .boxed()
+                .toList();
 
-       startTime = System.currentTimeMillis();
+        long parallelStartTime = System.currentTimeMillis();
+        int parallelSum = numbers.parallelStream()
+                .mapToInt(n -> n * n)
+                .sum();
+        long parallelEndTime = System.currentTimeMillis();
 
-       numbers.parallelStream()
-              .forEach(n-> {System.out.println(n*n);});
+        long normalStartTime = System.currentTimeMillis();
+        int normalSum = numbers.stream()
+                .mapToInt(n -> n * n)
+                .sum();
+        long normalEndTime = System.currentTimeMillis();
 
-       endTime = System.currentTimeMillis();
-
-       System.out.println("Parallel Stream Time: "+ (endTime - startTime) + " ms");
-
-       long lstartTime = System.currentTimeMillis();
-
-        numbers.stream()
-               .forEach(n -> { System.out.println(n*n); });
-
-       long lendTime = System.currentTimeMillis();
-
-       System.out.println("Stream Time: "+ (lendTime - lstartTime) + " ms");
-       System.out.println("ParallelStream Time: "+ (endTime - startTime) + " ms");
-       }
+        LOGGER.info(() -> "Parallel Stream Time: " + (parallelEndTime - parallelStartTime) + " ms");
+        LOGGER.info(() -> "Normal Stream Time: " + (normalEndTime - normalStartTime) + " ms");
+        LOGGER.info(() -> "Parallel Sum: " + parallelSum);
+        LOGGER.info(() -> "Normal Sum: " + normalSum);
+    }
 }
