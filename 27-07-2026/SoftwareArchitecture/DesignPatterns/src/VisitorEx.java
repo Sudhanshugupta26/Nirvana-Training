@@ -63,19 +63,14 @@ public class VisitorEx{
     public static void main(String[] args){
 
         Shape circle = new Circle();
-
         Shape rectangle = new Rectangle();
 
         Visitor area = new AreaVisitor();
-
         Visitor draw = new DrawVisitor();
 
         circle.accept(area);
-
         rectangle.accept(area);
-
         circle.accept(draw);
-
         rectangle.accept(draw);
     }
 }

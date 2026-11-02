@@ -45,7 +45,7 @@ class DocumentProxy implements Document{
 public class Proxy {
         public static void main(String[] args){
 
-        Document doc=new DocumentProxy(true);
+        Document doc=new DocumentProxy(false);
 
         doc.open();
     }

@@ -62,11 +62,8 @@ public class Builder {
         User user = new User.Builder(
                 "Sudhanshu",
                 "abc@gmail.com")
-
                 .age(22)
-
                 .phone("9876543210")
-
                 .build();
 
         user.display();

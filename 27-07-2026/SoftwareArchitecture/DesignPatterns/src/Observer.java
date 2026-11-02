@@ -68,11 +68,10 @@ class OrderService{
 }
 
 public class Observer{
-
+                                                                                      
     public static void main(String[] args){
 
-        OrderService order =
-                new OrderService();
+        OrderService order = new OrderService();
 
         order.addOb(new EmailOb());
 

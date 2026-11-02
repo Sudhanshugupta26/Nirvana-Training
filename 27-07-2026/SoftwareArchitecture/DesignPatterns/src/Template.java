@@ -61,16 +61,12 @@ public class Template{
 
     public static void main(String[] args){
 
-        Beverage coffee =
-                new Coffee();
-
+        Beverage coffee = new Coffee();
         coffee.prepareDrink();
 
         System.out.println();
 
-        Beverage tea =
-                new Tea();
-
+        Beverage tea = new Tea();
         tea.prepareDrink();
     }
 }

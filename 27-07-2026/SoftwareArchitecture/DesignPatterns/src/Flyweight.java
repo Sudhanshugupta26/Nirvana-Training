@@ -40,18 +40,15 @@ public class Flyweight{
 
     public static void main(String[] args){
 
-        Circle c1=
-                ShapeFactory.getCircle("Red");
+        Circle c1= ShapeFactory.getCircle("Red");
 
         c1.draw(10,20);
 
-        Circle c2=
-                ShapeFactory.getCircle("Red");
+        Circle c2= ShapeFactory.getCircle("Red");
 
         c2.draw(100,200);
 
-        Circle c3=
-                ShapeFactory.getCircle("Blue");
+        Circle c3= ShapeFactory.getCircle("Blue");
 
         c3.draw(50,60);
     }

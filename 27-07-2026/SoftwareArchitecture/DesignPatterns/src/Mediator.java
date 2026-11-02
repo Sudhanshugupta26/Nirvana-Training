@@ -2,26 +2,26 @@ import java.util.*;
 
 interface ChatMediator{
 
-    void sendMessage(String message, User sender);
+    void sendMessage(String message, ChatUser sender);
 
-    void addUser(User user);
+    void addUser(ChatUser user);
 }
 
 class ChatRoom implements ChatMediator{
 
-    private List<User> users =
+    private List<ChatUser> users =
             new ArrayList<>();
 
     @Override
-    public void addUser(User user){
+    public void addUser(ChatUser user){
 
         users.add(user);
     }
 
     @Override
-    public void sendMessage(String message, User sender){
+    public void sendMessage(String message, ChatUser sender){
 
-        for(User user : users){
+        for(ChatUser user : users){
 
             if(user != sender){
 
@@ -31,13 +31,13 @@ class ChatRoom implements ChatMediator{
     }
 }
 
-class User{
+class ChatUser{
 
     private String name;
 
     private ChatMediator mediator;
 
-    public User(String name,ChatMediator mediator){
+    public ChatUser(String name,ChatMediator mediator){
 
         this.name = name;
 
@@ -64,14 +64,14 @@ public class Mediator{
         ChatMediator chat =
                 new ChatRoom();
 
-        User u1 =
-                new User("Rahul", chat);
+        ChatUser u1 =
+                new ChatUser("Rahul", chat);
 
-        User u2 =
-                new User("Aman", chat);
+        ChatUser u2 =
+                new ChatUser("Aman", chat);
 
-        User u3 =
-                new User("Priya", chat);
+        ChatUser u3 =
+                new ChatUser("Priya", chat);
 
         chat.addUser(u1);
 

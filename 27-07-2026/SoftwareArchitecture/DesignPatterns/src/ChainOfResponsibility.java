@@ -9,6 +9,7 @@ abstract class Handler{
 
     public abstract void handle(String request);
 }
+
 class ValidationHandler extends Handler{
 
     @Override
@@ -22,6 +23,7 @@ class ValidationHandler extends Handler{
         }
     }
 }
+
 class AuthenticationHandler extends Handler{
 
     @Override
@@ -35,6 +37,7 @@ class AuthenticationHandler extends Handler{
         }
     }
 }
+
 class LoggingHandler extends Handler{
 
     @Override
@@ -48,6 +51,7 @@ class LoggingHandler extends Handler{
         }
     }
 }
+
 public class ChainOfResponsibility{
 
     public static void main(String[] args){

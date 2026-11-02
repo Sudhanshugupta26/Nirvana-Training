@@ -1,15 +1,15 @@
-abstract class Shape implements Cloneable{
+abstract class PrototypeShape implements Cloneable{
 
     String color;
 
     abstract void draw();
 
     @Override
-    public Shape clone(){
+    public PrototypeShape clone(){
 
         try{
 
-            return (Shape)super.clone();
+            return (PrototypeShape)super.clone();
 
         }catch(CloneNotSupportedException e){
 
@@ -18,15 +18,20 @@ abstract class Shape implements Cloneable{
     }
 }
 
-class Circle extends Shape{
+class PrototypeCircle extends PrototypeShape{
 
     int radius;
 
-    Circle(int radius,String color){
+    PrototypeCircle(int radius,String color){
 
         this.radius=radius;
 
         this.color=color;
+    }
+
+    @Override
+    public PrototypeCircle clone(){
+        return (PrototypeCircle)super.clone();
     }
 
     @Override
@@ -43,8 +48,8 @@ public class Prototype {
     
     public static void main(String[] args){
 
-        Circle original = new Circle(10,"Red");
-        Circle copy = (Circle)original.clone(); // create object using prototyping instead of creating new object from scratch
+        PrototypeCircle original = new PrototypeCircle(10,"Red");
+        PrototypeCircle copy = original.clone();
 
         copy.color="Blue";
 
